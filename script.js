@@ -1,12 +1,13 @@
 "use-strict";
 document.addEventListener("DOMContentLoaded", init);
 
+let hours;
+let minutes;
+let seconds;
+let counter;
+let i;
+
 function init() {
-    let hours;
-    let minutes;
-    let seconds;
-    let counter;
-    let i;
     document.addEventListener("submit", start);
 
 }
@@ -42,4 +43,3 @@ function show(hours, minutes, seconds) {
         clearInterval(i);
 
 }
-
