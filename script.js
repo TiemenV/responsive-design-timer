@@ -1,3 +1,4 @@
+
 "use-strict";
 document.addEventListener("DOMContentLoaded", init);
 
@@ -23,22 +24,15 @@ function start(e) {
 function tickDown() {
     counter--;
     hours = parseInt(counter / 3600);
-    minutes = parseInt(counter / 60);
+    minutes = parseInt(counter % 3600 / 60);
     seconds = counter % 60;
     show(hours, minutes, seconds)
 }
 
 function show(hours, minutes, seconds) {
-    if (hours < 10) {
-        hours = "0" + hours;
-    }
-    if (minutes < 10) {
-        minutes = "0" + minutes;
-    }
-    if (seconds < 10) {
-        seconds = "0" + seconds;
-    }
-    document.querySelector("div").innerHTML = (hours + ":" + minutes + ":" + seconds);
+   
+    document.querySelector("div").innerHTML = (hours< 10 ? '0' + hours: hours)+':'+(minutes< 10 ? '0' + minutes: minutes) + ':' + (seconds < 10 ? '0' + seconds : seconds);
+
     if (counter < 1)
         clearInterval(i);
 
